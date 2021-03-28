@@ -1,14 +1,28 @@
 import SwiftUI
 import Mapbox
+import MapboxCoreNavigation
+import MapboxNavigation
+import MapboxDirections
 
 struct ContentView: View {
-    
     @State var annotations: [MGLPointAnnotation] = [
-        MGLPointAnnotation(title: "Mapbox", coordinate: .init(latitude: 37.791434, longitude: -122.396267))
     ]
     
+    // Navigation route generated when select an annotation
+    @State var route: Route?
+    @State var routeOptions: NavigationRouteOptions?
+    @State var showNavigation: Bool = false
+    
     var body: some View {
-        MapView(annotations: $annotations).centerCoordinate(.init(latitude: 37.791293, longitude: -122.396324)).zoomLevel(16)
+        ZStack(alignment: .top) {
+            MapView(annotations: $annotations, route: $route, routeOptions: $routeOptions, showNavigation: $showNavigation).zoomLevel(16)
+            SearchBarViewController()
+                .frame(width: 300, height: 40)
+                .offset(y: 10)
+            if showNavigation {
+                MapNavigationView(route: $route, routeOptions: $routeOptions, showNavigation: $showNavigation)
+            }
+        }
     }
 }
 

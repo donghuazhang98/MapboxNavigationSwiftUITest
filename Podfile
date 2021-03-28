@@ -1,11 +1,12 @@
-platform :ios, '9.0'
+platform :ios, '14.0'
 
 target 'MapboxSwiftUIDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for MapboxSwiftUIDemo
-  pod 'Mapbox-iOS-SDK', '~> 5.3.0'
+  pod 'Mapbox-iOS-SDK', '~> 6.3'
+  pod 'MapboxNavigation', '~> 1.2'
 
   target 'MapboxSwiftUIDemoTests' do
     inherit! :search_paths
