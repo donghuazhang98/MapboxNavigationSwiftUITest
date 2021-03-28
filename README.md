@@ -1,5 +1,8 @@
-# mapbox-maps-swiftui-demo
+# mapbox-navigation-swiftui-demo
 
-This repository is the companion code for the [tutorial](https://docs.mapbox.com/help/tutorials/ios-swiftui/) on how to integrate the Mapbox Maps SDK for iOS with SwiftUI.
-
-Please refer to the tutorial for a step by step guide.
+For the mapbox-navigation bug testing purpose:
+  1. click on the search bar, should run normally
+  2. click done on the keyboard
+  3. long press a place in the map, start navigation
+  4. cancel the navigation
+  5. click on the search bar again, the keyboard bug will appear
